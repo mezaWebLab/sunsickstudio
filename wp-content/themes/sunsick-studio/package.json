@@ -1,0 +1,28 @@
+{
+  "name": "sunsick-studio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "autoprefixer": "^9.3.1",
+    "css-loader": "^1.0.1",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^2.0.0",
+    "postcss-cli": "^6.0.1",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.5.17",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.25.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sudo webpack --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
