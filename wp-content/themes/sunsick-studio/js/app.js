@@ -27,3 +27,10 @@ const app = new Vue({
 	router
 });
 
+window.scrollLock = function() {
+	$("body").addClass("scroll-lock");
+}
+
+window.scrollUnlock = function() {
+	$("body").removeClass("scroll-lock");
+}

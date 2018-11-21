@@ -1,3 +1,14 @@
+<!--
+||----------------------------------||
+||                                  ||
+||    Sunsick Studio                ||
+||    Navigation Component          ||
+||    Alex Meza (Meza Web Lab)      ||
+||    2018                          ||
+||                                  ||
+||----------------------------------||
+-->
+
 <template>
     <div id="navigation" class="wordpress-top">
         <div class="container">
@@ -10,12 +21,34 @@
                         <button class="button-main">
                             Get A Quote
                         </button>
-                        <button @click="openMenu">
+                        <button class="burger" @click="openMobileMenu">
                             <img v-bind:src="'/wp-content/themes/sunsick-studio/images/burger.png'" />
                         </button>
-                        <div :class="{ active : mobileMenu }" class="menu">
-
-                        </div>
+                        <transition name="fade">
+                            <div v-if="mobileMenu" class="menu">
+                                <button @click="closeMobileMenu">
+                                    <img :src="'/wp-content/themes/sunsick-studio/images/x.png'" />
+                                </button>
+                                <div class="links">
+                                    <router-link active-class="active" to="/services">
+                                        Services
+                                    </router-link>
+                                    <router-link active-class="active" to="/our-work">
+                                        Our Work
+                                    </router-link>
+                                    <router-link active-class="active" to="/gear">
+                                        Gear
+                                    </router-link>
+                                    <router-link active-class="active" to="/Contact">
+                                        Contact
+                                    </router-link>
+                                </div>
+                                <img class="logo" :src="'/wp-content/themes/sunsick-studio/images/logo-temp.png'" />
+                                <div class="credits">
+                                   &copy; 2018 Sunsick Studio.<br />Site by <a href="#">Meza Web Lab</a>
+                                </div>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -39,8 +72,13 @@
         created() {},
         mounted() {},
         methods : {
-            openMenu: function() {
+            openMobileMenu: function() {
                 this.mobileMenu = true;
+                window.scrollLock();
+            },
+            closeMobileMenu: function() {
+                this.mobileMenu = false;
+                window.scrollUnlock();
             }
         }
     };

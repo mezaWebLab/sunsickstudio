@@ -9,12 +9,20 @@
 ||----------------------------------||
 */
 
-body {
-	p,
-	a,
-	button {
-		font-family : $font-family !important;
-	}
+p,
+a,
+button {
+	font-family : $font-family !important;
+	background  : none;
+}
+
+a {
+	color : $color-primary;
+}
+
+.scroll-lock {
+	overflow-y : hidden !important;
+	overflow-x : hidden !important;
 }
 
 #app {

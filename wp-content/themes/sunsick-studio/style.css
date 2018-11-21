@@ -41,16 +41,34 @@ Version: 0.0.1
 ||----------------------------------||
 ||									||
 ||    Sunsick Studio 				||
+||	  SASS Functions        		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
 ||	  Global Style Layout   		||
 ||	  Alex Meza (Meza Web Lab)  	||
 ||	  2018					  		||
 ||									||
 ||----------------------------------||
 */
-body p,
-body a,
-body button {
-  font-family: "Roboto", helvetica, sans-serif !important; }
+p,
+a,
+button {
+  font-family: "Roboto", helvetica, sans-serif !important;
+  background: none; }
+
+a {
+  color: #DBAB0B; }
+
+.scroll-lock {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important; }
 
 #app .button-main {
   padding: 10px 15px 10px 15px;
@@ -99,7 +117,10 @@ body button {
     float: right; }
     #navigation .mobile button {
       margin-top: 15px;
+      border: none !important;
       display: inline-block; }
+      #navigation .mobile button.burger {
+        background: none; }
     #navigation .mobile .menu {
       width: 100vw;
       height: 100vh;
@@ -107,11 +128,48 @@ body button {
       left: 0px;
       position: fixed;
       background: #191919;
-      pointer-events: none;
-      opacity: 0;
-      z-index: -100000;
-      transition: opacity 0.25s ease-in-out; }
-      #navigation .mobile .menu.active {
-        pointer-events: all;
-        opacity: 1;
-        z-index: 100000; }
+      z-index: 100000; }
+      #navigation .mobile .menu.fade-enter-active, #navigation .mobile .menu.fade-leave-active {
+        transition: opacity 0.25s ease-in-out; }
+      #navigation .mobile .menu.fade-enter, #navigation .mobile .menu.fade-leave-to {
+        opacity: 0; }
+      #navigation .mobile .menu button {
+        position: absolute;
+        top: 15px;
+        right: 15px; }
+        #navigation .mobile .menu button img {
+          width: 50px; }
+      #navigation .mobile .menu .links {
+        text-align: center;
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+        top: 50%;
+        position: relative; }
+        #navigation .mobile .menu .links a {
+          color: #fafafa;
+          padding-top: 35px;
+          padding-bottom: 35px;
+          margin: 0px;
+          display: block;
+          font-weight: 700;
+          transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out; }
+          #navigation .mobile .menu .links a:focus, #navigation .mobile .menu .links a:active {
+            background-color: #DBAB0B;
+            text-decoration: none !important; }
+          #navigation .mobile .menu .links a.active {
+            background-color: #DBAB0B;
+            text-decoration: none !important; }
+      #navigation .mobile .menu .logo {
+        width: 50px;
+        position: absolute;
+        bottom: 15px;
+        left: 15px; }
+      #navigation .mobile .menu .credits {
+        position: absolute;
+        text-align: right;
+        color: #fafafa;
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.8em; }
+        #navigation .mobile .menu .credits a {
+          color: #fafafa; }

@@ -23,25 +23,91 @@
 
 		button {
 			margin-top  : 15px;
+			border      : none !important;
 			display     : inline-block;
+
+			&.burger {
+				background : none;
+			}
 		}
 
 		.menu {
-			width          : 100vw;
-			height         : 100vh;
-			top            : 0px;
-			left           : 0px;
-			position       : fixed;
-			background     : rgb(25, 25, 25);
-			pointer-events : none;
-			opacity        : 0;
-			z-index        : -100000;
-			transition     : opacity 0.25s ease-in-out;
+			width      : 100vw;
+			height     : 100vh;
+			top        : 0px;
+			left       : 0px;
+			position   : fixed;
+			background : rgb(25, 25, 25);
+			z-index    : 100000;
+			
+			&.fade-enter-active,
+			&.fade-leave-active {
+				transition : get-transitions(0.25s, opacity);
+			}
 
-			&.active {
-				pointer-events : all;
-				opacity        : 1;
-				z-index        : 100000;
+			&.fade-enter, 
+			&.fade-leave-to {
+				opacity : 0;
+			}
+
+			button {
+				position : absolute;
+				top      : 15px;
+				right    : 15px;
+
+				img {
+					width : 50px;
+				}
+			}
+
+			.links {
+				text-align : center;
+				transform  : translate(0, -50%);
+				top        : 50%;
+				position   : relative;
+
+				a {
+					color          : $white;
+					padding-top    : 35px;
+					padding-bottom : 35px;
+					margin         : 0px;
+					display        : block;
+					font-weight    : 700;
+					transition     : get-transitions(0.25s, background-color, color);
+
+					&:focus,
+					&:active {
+						background-color : $color-primary;
+						// color            : rgb(0, 0, 0);
+						text-decoration  : none !important;
+					}
+
+					&.active {
+						background-color : $color-primary;
+						text-decoration  : none !important;
+						// color            : rgb(0, 0, 0);
+					}
+				}
+			}
+
+			.logo {
+				width    : 50px;
+				position : absolute;
+				bottom   : 15px;
+				left     : 15px;
+			}
+
+			.credits {
+				position   : absolute;
+				text-align : right;
+				color      : $white;
+				bottom     : 15px;
+				right      : 15px;
+				font-size  : 0.8em;
+
+				a {
+					color : $white;
+				}
 			}
 		}
 	}
