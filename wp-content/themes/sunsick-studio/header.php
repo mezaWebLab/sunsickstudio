@@ -9,10 +9,15 @@
 	<meta name="author" content="">
 
 	<title>Sunsick Studio</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 	<div id="app">
+		<div id="background">
+			<div class="overlay"></div>
+		</div>
+
+		<navigation></navigation>

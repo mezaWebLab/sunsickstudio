@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-	<div class="row">
-
-
-	</div> 
+	<router-view></router-view>
 
 <?php get_footer(); ?>

@@ -12,6 +12,10 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "vue": "^2.5.17",
+    "vue-cli": "^2.9.6",
+    "vue-loader": "^15.4.2",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.17",
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {

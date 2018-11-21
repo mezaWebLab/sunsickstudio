@@ -1,0 +1,48 @@
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Navigation Styles.    		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+
+#navigation {
+	padding-top    : 15px;
+	padding-bottom : 15px;
+
+	.logo {
+		width : 80px;
+	}
+
+	.mobile {
+		white-space : nowrap;
+		float       : right;
+
+		button {
+			margin-top  : 15px;
+			display     : inline-block;
+		}
+
+		.menu {
+			width          : 100vw;
+			height         : 100vh;
+			top            : 0px;
+			left           : 0px;
+			position       : fixed;
+			background     : rgb(25, 25, 25);
+			pointer-events : none;
+			opacity        : 0;
+			z-index        : -100000;
+			transition     : opacity 0.25s ease-in-out;
+
+			&.active {
+				pointer-events : all;
+				opacity        : 1;
+				z-index        : 100000;
+			}
+		}
+	}
+}
