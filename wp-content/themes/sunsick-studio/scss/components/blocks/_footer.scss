@@ -1,0 +1,51 @@
+/*
+||----------------------------------||
+||                                  ||
+||    Sunsick Studio                ||
+||    Footer Styles                 ||
+||    Alex Meza (Meza Web Lab)      ||
+||    2018                          ||
+||                                  ||
+||----------------------------------||
+*/
+
+footer {
+	padding-top    : 50px;
+	padding-bottom : 60px;
+	margin-top     : 50px;
+	background     : linear-gradient(180deg, rgba(50, 50, 50, 1), rgba(20, 20, 20, 1));
+
+	@media (min-width : $breakpoint-md) {
+		display : none;
+	}
+
+	img {
+		width   : 100px;
+		margin  : 0 auto;
+		display : block;
+	}
+
+	.footer-links {
+		margin-top : 25px;
+
+		a {
+			font-weight : 200;
+			font-size   : 0.9em;
+			line-height : 40px;
+
+			&.active {
+				color : $color-primary;
+			}
+		}
+	}
+
+	.social {
+		margin-top : 25px;
+
+		.white-outline {
+			border        : 3px solid $white;
+			padding       : 5px;
+			border-radius : 100px;
+		}
+	}
+}

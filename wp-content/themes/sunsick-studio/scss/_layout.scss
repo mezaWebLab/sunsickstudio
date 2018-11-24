@@ -9,15 +9,40 @@
 ||----------------------------------||
 */
 
+body {
+	overflow-x : hidden;
+}
+
 p,
 a,
 button {
-	font-family : $font-family !important;
-	background  : none;
+	font-family    : $font-family !important;
+	background     : none;
+	letter-spacing : $letter-spacing;
 }
 
 a {
-	color : $color-primary;
+	color : $white;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration : none;
+	}
+}
+
+p {
+	font-weight : $font-weight-p;
+	line-height : $m-line-height-p;
+	font-size   : $m-font-size-p;
+
+	&.white {
+		color : $white;
+	}
+
+	&.dark-gray {
+		color : $black;
+	}
 }
 
 .scroll-lock {
@@ -25,35 +50,124 @@ a {
 	overflow-x : hidden !important;
 }
 
+h1 {
+	font-size      : $m-font-size-h1;
+	line-height    : $m-line-height-h1;
+	letter-spacing : $letter-spacing;
+	color       : $white;
+	text-shadow : $text-shadow-main;
+	line-height : $m-line-height-h1;
+
+	span {
+		color : $color-primary;
+	}
+}
+
+.divider {
+	width         : 125px;
+	height        : 5px;
+	background    : $color-primary;
+	margin        : 0 auto;
+	margin-top    : 50px;
+	margin-bottom : 50px;
+}
+
+#router-view {
+	margin-top : 25px;
+}
+
+.button-main {
+	padding       : 10px 15px 10px 15px;
+	border-radius : 100px;
+	background    : $color-primary;
+	border        : none;
+	color         : #fff;
+	text-shadow   : 0px 1px 4px rgba(0, 0, 0, 1);
+	box-shadow    : 0px 2px 4px rgba(0, 0, 0, 0.5);
+	font-weight   : bold;
+}
+
+#background {
+	width               : 100vw;
+	height              : 100vh;
+	position            : fixed;
+	top                 : 0px;
+	left                : 0px;
+	background-image    : url("images/background.png");
+	background-position : 30% 50%;
+	background-size     : cover;
+	z-index             : -1;
+
+	.overlay {
+		width      : 100%;
+		height     : 100%;
+		position   : absolute;
+		top        : 0px;
+		left       : 0px;
+		background : rgba(15, 15, 15, 0.75);
+	}
+}
+
+#fixed-flag {
+	width      : 100vw;
+	height     : 10px;
+	background : $color-primary;
+	position   : fixed;
+	bottom     : 0px;
+	left       : 0px;
+}
+
+.page-title {
+	width          : 100%;
+	padding-top    : 50px;
+	padding-bottom : 50px;
+	background     : linear-gradient(180deg, rgba(219, 171, 11, 0.45), rgba(219, 171, 11, 0.1));
+	text-align     : center;
+	box-shadow     : $box-shadow-main;
+
+	h1 {
+		margin : 0;
+	}
+}
+
 #app {
-	.button-main {
-		padding       : 10px 15px 10px 15px;
-		border-radius : 100px;
-		background    : $color-primary;
-		border        : none;
-		color         : #fff;
-		text-shadow   : 0px 1px 4px rgba(0, 0, 0, 1);
-		box-shadow    : 0px 2px 4px rgba(0, 0, 0, 0.5);
-		font-weight   : bold;
+	overflow-x : hidden;
+
+	@media (min-width : $breakpoint-md) {
+		padding-bottom : 100px;
 	}
 
-	#background {
-		width               : 100vw;
-		height              : 100vh;
-		position            : fixed;
-		top                 : 0px;
-		left                : 0px;
-		background-image    : url("images/background.png");
-		background-position : 30% 50%;
-		background-size     : cover;
+	.side-slide-enter-active {
+		animation-name     : slide-enter;
+		animation-duration : 0.5s;
+		// animation-delay    : 0.25s;
+		opacity            : 0;
+	}
 
-		.overlay {
-			width      : 100%;
-			height     : 100%;
-			position   : absolute;
-			top        : 0px;
-			left       : 0px;
-			background : rgba(15, 15, 15, 0.75);
-		}
+	.side-slide-leave-active {
+		animation-name     : slide-leave;
+		animation-duration : 0.5s;
+		// animation-delay    : 0.25s;
+	}
+}
+
+@keyframes slide-enter {
+	0% {
+		transform : translateX(-100vw);
+		opacity   : 0;
+	}
+	100% {
+		transform : translateX(0vw);
+		opacity   : 1;
+	}
+}
+
+@keyframes slide-leave {
+	0% {
+		transform : translateX(0);
+	}
+	100% {
+		transform : translate(100vw);
+		opacity   : 0;
 	}
 }

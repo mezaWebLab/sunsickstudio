@@ -12,3 +12,31 @@
 .wordpress-top {
 	margin-top : 50px;
 }
+
+.position-relative {
+	position : relative;
+}
+
+.text-align-center {
+	text-align : center;
+}
+
+.text-align-right {
+	text-align : right;
+}
+
+.text-align-left {
+	text-align : left;
+}
+
+.float-right {
+	float : right;
+}
+
+.background-color-primary {
+	background : $color-primary;
+}
+
+.color-primary {
+	color : $color-primary;
+}
