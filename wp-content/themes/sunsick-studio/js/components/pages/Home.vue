@@ -13,7 +13,7 @@
 	<div id="home">
 		<div class="container">
 			<div class="row">
-				<div class="col-md position-relative">
+				<div class="col-md-12 position-relative">
 					<div class="gradient-block">
 					</div>
 					<div class="title-home-container">
@@ -22,9 +22,11 @@
 							</h1>
 						</div>
 					</div>
-					<div class="divider"></div>
 				</div>
-				<div class="col-md">
+			</div>
+			<div class="divider"></div>
+			<div class="row">
+				<div class="col-md-12">
 					<p class="white">
 						At <strong>Sunsick Studio</strong>, our goal is to be a home for bands, artists, and creatives to express their vision on their own terms. 
 						Along with the space, instruments, and recording equipment, we use our 15 years of experience to help you make the recording you want. 

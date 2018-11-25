@@ -68,6 +68,12 @@ Version: 0.0.1
 .color-primary {
   color: #DBAB0B; }
 
+.padding-0 {
+  padding: 0 !important; }
+
+.color-white {
+  color: #fafafa; }
+
 /*
 ||----------------------------------||
 ||									||
@@ -126,6 +132,10 @@ h1 {
   h1 span {
     color: #DBAB0B; }
 
+h4 {
+  letter-spacing: 1px;
+  font-size: 1.25em; }
+
 .divider {
   width: 125px;
   height: 5px;
@@ -136,6 +146,9 @@ h1 {
 
 #router-view {
   margin-top: 25px; }
+  @media (min-width: 768px) {
+    #router-view {
+      margin-top: 0px; } }
 
 .button-main {
   padding: 10px 15px 10px 15px;
@@ -411,3 +424,28 @@ footer {
         line-height: 40px; }
         #home .title-home-container .title-home h1 span {
           color: #DBAB0B; }
+
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Services Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+#services .content {
+  margin-top: 50px; }
+  #services .content .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #DBAB0B;
+    margin: 0 auto;
+    top: 7px;
+    position: relative; }
+  #services .content h4 {
+    font-weight: 700; }
+  #services .content .row:nth-child(1), #services .content .row:nth-child(2) {
+    margin-bottom: 20px; }

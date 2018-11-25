@@ -63,6 +63,11 @@ h1 {
 	}
 }
 
+h4 {
+	letter-spacing : $letter-spacing;
+	font-size      : $m-font-size-h4;
+}
+
 .divider {
 	width         : 125px;
 	height        : 5px;
@@ -74,6 +79,10 @@ h1 {
 
 #router-view {
 	margin-top : 25px;
+
+	@media (min-width : $breakpoint-md) {
+		margin-top : 0px;
+	}
 }
 
 .button-main {
