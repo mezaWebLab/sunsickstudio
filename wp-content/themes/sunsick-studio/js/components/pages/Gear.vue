@@ -19,7 +19,17 @@
                     </div>
                 </div>
             </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="col-10">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="divider"></div>
 	</div>	
 </template>
 

@@ -48,3 +48,15 @@
 .color-white {
 	color : $white;
 }
+
+.hide-on-small-only {
+	@media (max-width : $breakpoint-md) {
+		display : none;
+	}
+}
+
+.hide-on-medium-up {
+	@media (min-width : $breakpoint-md) {
+		display : none;
+	}
+}

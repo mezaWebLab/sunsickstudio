@@ -22,11 +22,21 @@
 		height     : 235px;
 		background : linear-gradient(-180deg, rgba(219, 171, 11, 0.9), rgba(219, 171, 11, 0.1));
 		box-shadow : $box-shadow-main;
+		transition : get-transitions($responsive-transition-duration, width, height);
+
+		@media (min-width : $breakpoint-md) {
+			width  : 54%;
+			height : 70vh;
+		}
 	}
 
 	.title-home-container {
 		width      : 100%;
 		height     : 235px;
+
+		@media (min-width : $breakpoint-md) {
+			height : 70vh;
+		}
 
 		.title-home {
 			position   : relative;
@@ -34,12 +44,22 @@
 			left       : 50%;
 			transform  : translate(-50%, -50%);
 			display    : table;
-			// margin-top : 20px;
+			transition : get-transitions($responsive-transition-duration, top);
+
+			@media (min-width : $breakpoint-md) {
+				top  : 50%;
+				left : 60%;
+			}
 
 			h1 {
 				color       : $white;
 				text-shadow : $text-shadow-main;
 				line-height : $m-line-height-h1;
+				transition  : get-transitions($responsive-transition-duration, line-height);
+
+				@media (min-width : $breakpoint-md) {
+					line-height : $d-line-height-h1;
+				}
 
 				span {
 					color : $color-primary;

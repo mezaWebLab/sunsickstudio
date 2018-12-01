@@ -12,6 +12,11 @@
 #navigation {
 	padding-top    : 30px;
 	padding-bottom : 30px;
+	transition     : get-transitions($responsive-transition-duration, padding-bottom);
+
+	@media (min-width : $breakpoint-md) {
+		padding-bottom : 60px;
+	}
 
 	.logo {
 		width : 80px;

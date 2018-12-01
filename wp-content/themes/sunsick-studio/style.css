@@ -35,6 +35,11 @@ Version: 0.0.1
 ||--------------------------||
 */
 /*
+||--------------------------||
+||	      Transitions     	||
+||--------------------------||
+*/
+/*
 ||----------------------------------||
 ||									||
 ||    Sunsick Studio 				||
@@ -74,6 +79,14 @@ Version: 0.0.1
 .color-white {
   color: #fafafa; }
 
+@media (max-width: 768px) {
+  .hide-on-small-only {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .hide-on-medium-up {
+    display: none; } }
+
 /*
 ||----------------------------------||
 ||									||
@@ -110,9 +123,9 @@ a {
     text-decoration: none; }
 
 p {
-  font-weight: 200;
-  line-height: 23px;
-  font-size: 0.9em; }
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 0.85em; }
   p.white {
     color: #fafafa; }
   p.dark-gray {
@@ -129,6 +142,10 @@ h1 {
   color: #fafafa;
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   line-height: 40px; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3em;
+      line-height: 60px; } }
   h1 span {
     color: #DBAB0B; }
 
@@ -195,6 +212,9 @@ h4 {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
   .page-title h1 {
     margin: 0; }
+
+.content {
+  margin-top: 50px; }
 
 #app {
   overflow-x: hidden; }
@@ -263,7 +283,11 @@ h4 {
 */
 #navigation {
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  transition: padding-bottom 1s ease-in-out; }
+  @media (min-width: 768px) {
+    #navigation {
+      padding-bottom: 60px; } }
   #navigation .logo {
     width: 80px; }
   #navigation .desktop {
@@ -347,9 +371,27 @@ h4 {
         bottom: 15px;
         right: 15px;
         font-size: 0.8em;
-        font-weight: 200; }
+        font-weight: 300; }
         #navigation .mobile .menu .credits a {
           color: #fafafa; }
+
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Player Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+#player {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  min-height: 300px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, rgba(56, 56, 56, 0.8), rgba(0, 0, 0, 0.7)); }
 
 /*
 ||----------------------------------||
@@ -407,21 +449,38 @@ footer {
     position: absolute;
     height: 235px;
     background: linear-gradient(-180deg, rgba(219, 171, 11, 0.9), rgba(219, 171, 11, 0.1));
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: width 1s ease-in-out, height 1s ease-in-out; }
+    @media (min-width: 768px) {
+      #home .gradient-block {
+        width: 54%;
+        height: 70vh; } }
   #home .title-home-container {
     width: 100%;
     height: 235px; }
+    @media (min-width: 768px) {
+      #home .title-home-container {
+        height: 70vh; } }
     #home .title-home-container .title-home {
       position: relative;
       top: 55%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
-      display: table; }
+      display: table;
+      transition: top 1s ease-in-out; }
+      @media (min-width: 768px) {
+        #home .title-home-container .title-home {
+          top: 50%;
+          left: 60%; } }
       #home .title-home-container .title-home h1 {
         color: #fafafa;
         text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-        line-height: 40px; }
+        line-height: 40px;
+        transition: line-height 1s ease-in-out; }
+        @media (min-width: 768px) {
+          #home .title-home-container .title-home h1 {
+            line-height: 60px; } }
         #home .title-home-container .title-home h1 span {
           color: #DBAB0B; }
 
@@ -449,3 +508,76 @@ footer {
     font-weight: 700; }
   #services .content .row:nth-child(1), #services .content .row:nth-child(2) {
     margin-bottom: 20px; }
+
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Gear Styles           		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+#gear .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #DBAB0B;
+  margin: 0 auto;
+  top: 7px;
+  position: relative; }
+
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Our Work Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+#our-work .music-slider {
+  width: 100%; }
+  #our-work .music-slider .slick-arrow {
+    position: absolute;
+    border: none;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    top: 41%;
+    z-index: 10; }
+    #our-work .music-slider .slick-arrow:focus, #our-work .music-slider .slick-arrow:hover, #our-work .music-slider .slick-arrow:active {
+      outline: none; }
+    #our-work .music-slider .slick-arrow.slick-disabled {
+      -webkit-filter: brightness(20%);
+              filter: brightness(20%); }
+    #our-work .music-slider .slick-arrow.slick-next {
+      right: 0; }
+  #our-work .music-slider .album:focus, #our-work .music-slider .album:hover, #our-work .music-slider .album:active {
+    outline: none; }
+  #our-work .music-slider .album .artwork {
+    width: 215px;
+    height: 215px;
+    margin: 0 auto;
+    background-image: url("images/bp.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    cursor: pointer; }
+    #our-work .music-slider .album .artwork:active img, #our-work .music-slider .album .artwork:hover img {
+      opacity: 1; }
+    #our-work .music-slider .album .artwork img {
+      position: relative;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 0.25s ease-in-out; }
+  #our-work .music-slider .album .name {
+    text-align: center;
+    color: #fafafa;
+    font-size: 1.1em;
+    font-weight: 200;
+    margin-top: 15px; }

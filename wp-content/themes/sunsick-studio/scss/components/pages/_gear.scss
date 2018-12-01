@@ -1,0 +1,22 @@
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Gear Styles           		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+
+#gear {
+	.dot {
+		width         : 6px;
+		height        : 6px;
+		border-radius : 3px;
+		background    : $color-primary;
+		margin        : 0 auto;
+		top           : 7px;
+		position      : relative;
+	}
+}

@@ -29,7 +29,7 @@
                                 <button @click="closeMobileMenu">
                                     <img :src="'/wp-content/themes/sunsick-studio/images/x.svg'" />
                                 </button>
-                                <div class="links" @click="closeMobileMenu">
+                                <div class="links" @click="closeMobileMenu" onclick="window.scrollToTop()">
                                     <router-link active-class="active" to="/" exact>
                                         Home
                                     </router-link>
@@ -117,7 +117,6 @@
                 window.scrollLock();
             },
             closeMobileMenu: function() {
-                console.log("ha!");
                 this.mobileMenu = false;
                 window.scrollUnlock();
             }

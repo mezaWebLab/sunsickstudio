@@ -1,0 +1,81 @@
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Our Work Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+
+#our-work {
+	.music-slider {
+		width : 100%;
+
+		.slick-arrow {
+			position  : absolute;
+			border    : none;
+			transform : translate(0, -50%);
+			top       : 41%;
+			z-index   : 10;
+
+			&:focus,
+			&:hover,
+			&:active {
+				outline : none;
+			}
+
+			&.slick-disabled {
+				filter : brightness(20%)
+			}
+
+			&.slick-next {
+				right : 0;
+			}
+		}
+
+		.album {
+			&:focus,
+			&:hover,
+			&:active {
+				outline : none;
+			}
+
+			.artwork {
+				width               : 215px;
+				height              : 215px;
+				margin              : 0 auto;
+				background-image    : url("images/bp.jpg");
+				background-size     : cover;
+				background-position : 50% 50%;
+				cursor              : pointer;
+
+				&:active,
+			    &:hover {
+			    	img {
+			    		opacity : 1;
+			    	}
+			    }
+
+				img {
+					position   : relative;
+					transform  : translate(-50%, -50%);
+				    left       : 50%;
+				    top        : 50%;
+				    opacity    : 0;
+				    cursor     : pointer;
+				    transition : get-transitions(0.25s, opacity);
+				}
+			}
+
+			.name {
+				text-align  : center;
+				color       : $white;
+				font-size   : 1.1em;
+				font-weight : 200;
+				margin-top  : 15px;
+			}
+		}
+	}
+}

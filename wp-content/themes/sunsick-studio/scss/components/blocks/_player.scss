@@ -1,0 +1,19 @@
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Player Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+
+#player {
+	padding-top    : 15px;
+	padding-bottom : 15px;
+	width          : 100%;
+	min-height     : 300px;
+	box-shadow     : $box-shadow-main;
+	background     : linear-gradient(180deg, rgba(56, 56, 56, 0.8), rgba(0, 0, 0, 0.7));
+}

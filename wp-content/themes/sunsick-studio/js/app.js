@@ -16,6 +16,8 @@ import { routes } from "./routes";
 Vue.use(VueRouter);
 
 Vue.component('navigation', require('./components/blocks/Navigation.vue').default);
+Vue.component('player', require('./components/blocks/Player.vue').default);
+
 
 const router = new VueRouter({
     routes,
@@ -33,4 +35,8 @@ window.scrollLock = function() {
 
 window.scrollUnlock = function() {
 	$("body").removeClass("scroll-lock");
+}
+
+window.scrollToTop = function() {
+	$("html, body").animate({ scrollTop: 0 }, 'fast');
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>PlayBtn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Our-Work" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Our-Work-Mobile" transform="translate(-97.000000, -771.000000)">
+            <g id="Player" transform="translate(26.000000, 700.000000)">
+                <g id="Play-Button" transform="translate(19.000000, 19.000000)">
+                    <g id="PlayBtn" transform="translate(52.329897, 52.329897)">
+                        <ellipse id="Oval" fill-opacity="0.699162138" fill="#DBAB0B" cx="18.4123711" cy="18.4123711" rx="18.4123711" ry="18.4123711"></ellipse>
+                        <polygon id="Triangle" fill-opacity="0.698341259" fill="#FFFFFF" transform="translate(19.623711, 18.654639) rotate(90.000000) translate(-19.623711, -18.654639) " points="19.6237113 13.5670103 24.7113402 23.742268 14.5360825 23.742268"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
