@@ -1,0 +1,80 @@
+/*
+||----------------------------------||
+||									||
+||    Sunsick Studio 				||
+||	  Contact Styles         		||
+||	  Alex Meza (Meza Web Lab)  	||
+||	  2018					  		||
+||									||
+||----------------------------------||
+*/
+
+#contact {
+	.page-subtitle {
+		font-weight : 200;
+		font-style  : italic;
+		text-align  : center;
+		margin-top  : 50px;
+		transition  : get-transitions($responsive-transition-duration, margin-top);
+
+		@media (min-width : $breakpoint-md) {
+			text-align : left;
+			margin-top : 0px;
+
+			br {
+				display : none;
+			}
+		}
+	}
+
+	.margin-top {
+		margin-top : 45px;
+	}
+
+	input {
+		width          : 100%;
+		padding        : 10px;
+		background     : rgba(0, 0, 0, 0.70);
+		border-radius  : 2px;
+		border         : 1px solid $white;
+		color          : $white;
+		margin-bottom  : 25px;
+		box-shadow     : $box-shadow-main;
+		transition     : get-transitions($responsive-transition-duration, margin-bottom);
+
+		@media (min-width : $breakpoint-md) {
+			width         : 90%;
+			margin-bottom : 40px;
+		}
+	}
+
+	textarea {
+		width          : 100%;
+		background     : rgba(0, 0, 0, 0.70);
+		border-radius  : 2px;
+		border         : 1px solid $white;
+		color          : $white;
+		height         : 150px;
+		padding        : 10px;
+		box-shadow     : $box-shadow-main;
+
+		@media (min-width : $breakpoint-md) {
+			width : 95.5%;
+		}
+	}
+
+	button {
+		margin         : 0 auto;
+		display        : block;
+		margin-top     : 25px;
+		position       : relative;
+		padding-left   : 50px;
+		padding-right  : 50px;
+		transition     : get-transitions($responsive-transition-duration, margin-top);
+
+		@media (min-width : $breakpoint-md) {
+			left       : -15px;
+			margin-top : 40px;
+		}
+	}
+}

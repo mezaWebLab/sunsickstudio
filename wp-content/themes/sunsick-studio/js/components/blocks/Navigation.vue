@@ -59,19 +59,19 @@
                                 Home
                             </router-link>
                             <router-link active-class="active" to="/services" exact>
-                                Services
+                                <span @click="onLinkClick">Services</span>
                             </router-link>
                             <router-link active-class="active" to="/our-work" exact>
-                                Our Work
+                                <span @click="onLinkClick">Our Work</span>
                             </router-link>
                             <router-link active-class="active" to="/gear" exact>
-                                Gear
+                                <span @click="onLinkClick">Gear</span>
                             </router-link>
                             <router-link active-class="active" to="/contact" exact>
-                                Contact
+                                <span @click="onLinkClick">Contact</span>
                             </router-link>
                             <router-link class="button-main" tag="button" active-class="active" to="/contact" exact>
-                                Get A Quote
+                                <span @click="onLinkClick">Get A Quote</span>
                             </router-link>
                         </div>
                     </div>
@@ -119,6 +119,10 @@
             closeMobileMenu: function() {
                 this.mobileMenu = false;
                 window.scrollUnlock();
+            },
+            onLinkClick: function() {
+                window.hideHomeParagraph();
+                window.expandPlayer();
             }
         }
     };

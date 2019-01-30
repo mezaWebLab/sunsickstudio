@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>PlayBtn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Our-Work" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Our-Work-Mobile" transform="translate(-142.000000, -790.000000)">
+            <g id="Player" transform="translate(26.000000, 700.000000)">
+                <g id="Play-Button" transform="translate(19.000000, 19.000000)">
+                    <g id="PlayBtn" transform="translate(97.000000, 71.000000)">
+                        <ellipse id="Oval" fill-opacity="0.699162138" fill="#DBAB0B" cx="18.4123711" cy="18.4123711" rx="18.4123711" ry="18.4123711"></ellipse>
+                        <rect id="Rectangle-3" fill-opacity="0.71" fill="#FFFFFF" x="13" y="11" width="4" height="15"></rect>
+                        <rect id="Rectangle-3" fill-opacity="0.71" fill="#FFFFFF" x="21" y="11" width="4" height="15"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

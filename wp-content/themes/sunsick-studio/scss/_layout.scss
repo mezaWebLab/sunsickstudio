@@ -9,28 +9,6 @@
 ||----------------------------------||
 */
 
-body {
-	overflow-x : hidden;
-}
-
-p,
-a,
-button {
-	font-family    : $font-family !important;
-	background     : none;
-	letter-spacing : $letter-spacing;
-}
-
-a {
-	color : $white;
-
-	&:hover,
-	&:active,
-	&:focus {
-		text-decoration : none;
-	}
-}
-
 p {
 	font-weight : $font-weight-p;
 	line-height : $m-line-height-p;
@@ -45,6 +23,50 @@ p {
 	}
 }
 
+body {
+	overflow-x : hidden;
+
+	&.mobile {
+		p {
+			font-weight : $font-weight-p-2;
+		}
+	}
+
+	&.desktop {
+		p {
+			font-weight : $font-weight-p;
+		}
+	}
+}
+
+p,
+a,
+button {
+	font-family    : $font-family !important;
+	background     : none;
+	letter-spacing : $letter-spacing;
+}
+
+button {
+	cursor : pointer;
+
+	&:hover,
+	&:active,
+	&:focus {
+		outline : none !important;
+	}
+}
+
+a {
+	color : $white;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration : none;
+	}
+}
+
 .scroll-lock {
 	overflow-y : hidden !important;
 	overflow-x : hidden !important;
@@ -54,7 +76,7 @@ h1 {
 	font-size      : $m-font-size-h1;
 	line-height    : $m-line-height-h1;
 	letter-spacing : $letter-spacing;
-	color          : $white;
+	color          : $white !important;
 	text-shadow    : $text-shadow-main;
 	line-height    : $m-line-height-h1;
 
@@ -80,6 +102,12 @@ h4 {
 	margin        : 0 auto;
 	margin-top    : 50px;
 	margin-bottom : 50px;
+
+	&.alt {
+		margin-left   : 10px;
+		margin-top    : 30px;
+		margin-bottom : 30px;
+	}
 }
 
 #router-view {
@@ -112,6 +140,14 @@ h4 {
 	background-size     : cover;
 	z-index             : -1;
 
+	#granim {
+		width    : 100vw;
+		height   : 50vh;
+		position : absolute;
+		left     : 0px;
+		bottom   : 0px;
+	}
+
 	.overlay {
 		width      : 100%;
 		height     : 100%;
@@ -129,6 +165,64 @@ h4 {
 	position   : fixed;
 	bottom     : 0px;
 	left       : 0px;
+	// filter     : drop-shadow(0px -2px 6px rgba(0, 0, 0, 0.5));
+
+	.flag-content {
+		position               : absolute;
+		right                  : 0;
+		bottom                 : 10px;
+		background             : $color-primary;
+		padding                : 10px 5px 0px 5px;
+		display                : grid;
+		grid-template-columns  : 25% 25% 50%;
+		border-top-left-radius : 10px;
+
+		img {
+			width   : 30px;
+			margin  : 0 auto;
+			display : block;
+		}
+
+		.credits {
+			text-align  : center;
+			color       : $white;
+			font-weight : 200;
+			font-size   : 0.75em;
+		}
+	}
+}
+
+.social-links {
+	display               : grid;
+	grid-template-rows    : 50px 50px;
+	grid-template-columns : 50px;
+	position              : fixed;
+	bottom                : 50px;
+	right                 : 0px;
+	box-shadow            : 0px 2px 16px rgba(0, 0, 0, 0.3);
+	cursor                : pointer;
+
+	.top {
+		background : #3b5998;
+
+		img {
+			transform : translate(-50%, -50%);
+			left      : 50%;
+			top       : 50%;
+			position  : relative;
+		}
+	}
+
+	.bottom {
+		background : #e95950;
+
+		img {
+			transform : translate(-50%, -50%);
+			left      : 50%;
+			top       : 50%;
+			position  : relative;
+		}
+	}
 }
 
 .page-title {
@@ -138,6 +232,15 @@ h4 {
 	background     : linear-gradient(180deg, rgba(219, 171, 11, 0.45), rgba(219, 171, 11, 0.1));
 	text-align     : center;
 	box-shadow     : $box-shadow-main;
+	transition     : get-transitions($responsive-transition-duration, padding-top, padding-bottom);
+
+	@media (min-width : $breakpoint-md) {
+		text-align     : left;
+		background     : none;
+		box-shadow     : none;
+		padding-top    : 0px;
+		padding-bottom : 0px;
+	}
 
 	h1 {
 		margin : 0;
@@ -146,13 +249,18 @@ h4 {
 
 .content {
 	margin-top : 50px;
+
+	@media (min-width : $breakpoint-md) {
+		margin-top : 15px;
+	}
 }
 
 #app {
 	overflow-x : hidden;
+	overflow-y : hidden;
 
 	@media (min-width : $breakpoint-md) {
-		padding-bottom : 100px;
+		margin-bottom : 100px;
 	}
 
 	.side-slide-enter-active {

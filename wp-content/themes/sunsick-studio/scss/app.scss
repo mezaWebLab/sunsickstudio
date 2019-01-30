@@ -5,8 +5,13 @@ Description: Theme for Sunsick Studio
 Version: 0.0.1
 */
   
-
+// Disable on Offline
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+// @font-face {
+//     font-family : 'Roboto';
+//     src         : url("/wp-content/themes/sunsick-studio/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+// }
 
 @import "settings";
 @import "utils";
@@ -29,3 +34,5 @@ Version: 0.0.1
 @import "components/pages/gear";
 
 @import "components/pages/our-work";
+
+@import "components/pages/contact";

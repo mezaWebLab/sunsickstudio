@@ -43,10 +43,7 @@
 			}
 
 			.artwork {
-				width               : 215px;
-				height              : 215px;
 				margin              : 0 auto;
-				background-image    : url("images/bp.jpg");
 				background-size     : cover;
 				background-position : 50% 50%;
 				cursor              : pointer;
@@ -72,9 +69,71 @@
 			.name {
 				text-align  : center;
 				color       : $white;
-				font-size   : 1.1em;
 				font-weight : 200;
 				margin-top  : 15px;
+			}
+
+		}
+
+		&.music-slider-mobile {
+			.album {
+				.artwork {
+					width  : 215px;
+					height : 215px;
+				}
+
+				.name {
+					font-size : 1.1em;
+				}	
+			}
+		}
+
+		&.music-slider-desktop {
+			.slick-slide {
+				&:hover,
+				&:focus,
+				&:active {
+					outline : none;
+				}
+			}
+
+			.slick-slide > div {
+				width      : 90%;
+				margin     : 0 auto;
+				transition : get-transitions($responsive-transition-duration, width);
+
+				@media (min-width : $breakpoint-lg) {
+					width : 85%;
+				}
+			}
+
+			.album {
+				margin-bottom : 50px;
+
+				.artwork {
+					width      : 75px;
+					height     : 75px;
+					transition : get-transitions($responsive-transition-duration, width, height);
+
+					@media (min-width : $breakpoint-xmd) {
+						width  : 115px;
+						height : 115px;
+					}
+
+					@media (min-width : $breakpoint-lg) {
+						width  : 145px;
+						height : 145px;
+					}
+				}
+
+				.name {
+					font-size  : 0.9em;
+					transition : get-transitions($responsive-transition-duration, font-size);
+
+					@media (min-width : $breakpoint-xmd) {
+						font-size : 1em;
+					}
+				}
 			}
 		}
 	}

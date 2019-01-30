@@ -88,16 +88,33 @@
 		</footer>
 
 		<div id="fixed-flag">
+			<!-- <div class="flag-content hide-on-small-only">
+				<a href="http://mezaweblab.com"><img src="wp-content/themes/sunsick-studio/images/fb.svg" /></a>
+				<a href="http://mezaweblab.com"><img src="wp-content/themes/sunsick-studio/images/ig.svg" /></a>
+				<div class="credits">
+					Website by <a href="http://mezaweblab.com">mezaWebLab</a>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="social-links">
+			<div class="top" onclick="goTo('facebook')">
+				<img src="wp-content/themes/sunsick-studio/images/fb.svg" />
+			</div>
+			<div class="bottom" onclick="goTo('instagram')">
+				<img src="wp-content/themes/sunsick-studio/images/ig.svg" />
+			</div>
 		</div>
 	</div>
 
 	<!-- End Vue App Container -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-	<script src="<?php echo get_bloginfo( 'template_directory' );?>/bundle.js"></script>
+	<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' );?>/js/vendor/jquery.min.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' );?>/js/vendor/slick.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' );?>/js/vendor/granim.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' );?>/js/vendor/vue.js"></script>
+	<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' );?>/bundle.js"></script>
 	<?php wp_footer(); ?> 
 </body>
 </html>

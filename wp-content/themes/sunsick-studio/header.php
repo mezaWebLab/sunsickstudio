@@ -9,15 +9,16 @@
 	<meta name="author" content="">
 
 	<title>Sunsick Studio</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" crossorigin="anonymous">
+	<link href="<?php echo get_bloginfo( 'template_directory' );?>/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo( 'template_directory' );?>/css/slick.css" />
 </head>
 
 <body>
 
 	<div id="app">
 		<div id="background">
+			<canvas id="granim"></canvas>
 			<div class="overlay"></div>
 		</div>
 

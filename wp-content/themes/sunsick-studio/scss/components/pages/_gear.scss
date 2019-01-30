@@ -19,4 +19,31 @@
 		top           : 7px;
 		position      : relative;
 	}
+
+	.margin-top {
+		margin-top : 40px;
+	}
+
+	.equipment-lists {
+		color : $white;
+
+		.dash {
+			color       : $color-primary;
+			font-weight : 900;
+		}
+
+		.equipment {
+			font-weight : 200;
+			font-size   : 0.8em;
+		}
+
+		ul {
+			padding-left  : 0px;
+			margin-bottom : 0px;
+		}
+
+		li {
+			list-style : none;
+		}
+	}
 }

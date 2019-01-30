@@ -12,14 +12,20 @@
 #navigation {
 	padding-top    : 30px;
 	padding-bottom : 30px;
-	transition     : get-transitions($responsive-transition-duration, padding-bottom);
+	transition     : get-transitions($responsive-transition-duration, padding-bottom, padding-top);
 
 	@media (min-width : $breakpoint-md) {
 		padding-bottom : 60px;
+		padding-top    : 50px;
 	}
 
 	.logo {
-		width : 80px;
+		width      : 80px;
+		transition : get-transitions($responsive-transition-duration, width);;
+
+		@media (min-width : $breakpoint-md) {
+			width : 115px;
+		}
 	}
 
 	.desktop {
@@ -35,6 +41,10 @@
 			display     : inline-block;
 			white-space : nowrap;
 			float       : right;
+
+			@media (min-width : $breakpoint-md) {
+				margin-top : 20px;
+			}
 
 			a {
 				margin      : 0px  15px 0px 15px;
@@ -117,7 +127,8 @@
 					}
 
 					&:focus,
-					&:active {
+					&:active,
+					&:hover {
 						background-color : $color-primary;
 						// color            : rgb(0, 0, 0);
 						text-decoration  : none !important;

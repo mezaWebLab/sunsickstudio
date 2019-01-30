@@ -15,11 +15,17 @@
 			<div class="row">
 				<div class="col-md-12 position-relative">
 					<div class="gradient-block">
+						<!-- <div class="gradient-content hide-on-small-only">
+							<img :src="'wp-content/themes/sunsick-studio/images/fb.svg'" />
+							<img :src="'wp-content/themes/sunsick-studio/images/ig.svg'" />
+							<div class="credits">
+								Website by <a href="http://mezaweblab.com">mezaWebLab</a>
+							</div>
+						</div> -->
 					</div>
 					<div class="title-home-container">
 						<div class="title-home">
-							<h1 v-html="homeTitle">
-							</h1>
+							<h1 v-html="homeData[0]"></h1>
 						</div>
 					</div>
 				</div>
@@ -28,12 +34,7 @@
 				<div class="divider"></div>
 				<div class="row">
 					<div class="col-md-12">
-						<p class="white">
-							At <strong>Sunsick Studio</strong>, our goal is to be a home for bands, artists, and creatives to express their vision on their own terms. 
-							Along with the space, instruments, and recording equipment, we use our 15 years of experience to help you make the recording you want. 
-							<br /><br />
-							In that, we're happy to answer any questions about the studio or recording process, whether you're working with us or not.
-						</p>
+						<p v-html="homeData[1]" class="white"></p>
 					</div>
 				</div>
 			</div>
@@ -42,19 +43,25 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+
     export default {
         name      : "home",
         mixins    : [],
         components: {},
         props     : ["home-title"],
         watch     : {},
-        computed  : {},
+        computed  : mapGetters([
+			"homeData"
+		]),
         data() {
             return {
             };
         },
-        created() {},
+		created() {},
         mounted() {
+        	window.showHomeParagraph();
+			window.minimizePlayer();
         },
         methods : {
 

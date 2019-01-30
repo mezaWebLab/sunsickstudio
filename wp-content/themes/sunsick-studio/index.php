@@ -19,9 +19,9 @@
 			</div>
 			<div class="col-md-5">
 				<player></player>
-				<div class="hide-on-small-only">
+				<div class="hide-on-small-only home-paragraph-desktop">
 					<div class="divider"></div>
-					<p class="white home-paragraph-desktop">
+					<p class="white">
 						At <strong>Sunsick Studio</strong>, our goal is to be a home for bands, artists, and creatives to express their vision on their own terms. 
 						Along with the space, instruments, and recording equipment, we use our 15 years of experience to help you make the recording you want. 
 						<br /><br />

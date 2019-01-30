@@ -16,7 +16,7 @@ footer {
 	background     : linear-gradient(180deg, rgba(50, 50, 50, 1), rgba(20, 20, 20, 1));
 
 	@media (min-width : $breakpoint-md) {
-		display : none;
+		display : none !important;
 	}
 
 	img {
@@ -32,6 +32,7 @@ footer {
 			font-weight : 200;
 			font-size   : 0.9em;
 			line-height : 40px;
+			color       : $white !important;
 
 			&.active {
 				color : $color-primary;
