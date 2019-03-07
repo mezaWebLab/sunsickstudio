@@ -15,6 +15,8 @@
  */
 define( 'WPINC', 'wp-includes' );
 
+// wp_set_password( 'password', 1 );
+
 // Include files required for initialization.
 require( ABSPATH . WPINC . '/load.php' );
 require( ABSPATH . WPINC . '/default-constants.php' );

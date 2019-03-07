@@ -16,30 +16,32 @@ Vue.use(Vuex);
 
 let jsonData;
 
-function fetchSiteData() {
-    $.ajax({
-        url      : "/wp-content/themes/sunsick-studio/sunsick-studio.php",
-        type     : "post",
-        dataType : "json",
-        async    : false,
-        success  : (json) => {
-            jsonData = json;
-        }
-    });
-}
-
-fetchSiteData();
+$.ajax({
+    url      : "/wp-content/themes/sunsick-studio/sunsick-studio.php",
+    type     : "post",
+    dataType : "json",
+    async    : false,
+    success  : (json) => {
+        jsonData = json;
+        console.log(json);
+    }
+});
 
 export const storeState = {
     home   : jsonData.home,
     player : {
-        songId  : 0,
-        song    : "",
-        artist  : "",
-        album   : "",
-        src     : "",
-        artwork : "",
-        playing : false
+        songId     : 0,
+        playing    : false,
+        loadedSong : {
+            id      : "",
+            title   : "",
+            artist  : "",
+            album   : "",
+            artwork : "",
+            src     : "",
+            loaded  : false,
+            playing : false
+        }
     },
     music : {
         artists : [
@@ -49,41 +51,62 @@ export const storeState = {
                 songs  : [
                     {
                         id      : 0,
-                        title   : "Alien OG",
+                        title   : "Wish",
                         artist  : "Battery Point",
-                        album   : "Cool Album",
-                        artwork :  "/wp-content/themes/sunsick-studio/music/artists/batterypoint/album-0.png",
-                        src     : "",
+                        album   : "Star",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a3809403914_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-wish.mp3",
+                        loaded  : false,
                         playing : false
-                    }
-                ]
-            },
-            {
-                id     : 1,
-                name   : "Black Marble",
-                songs  : [
+                    },
                     {
                         id      : 1,
-                        title   : "Woods",
-                        artist  : "Black Marble",
-                        album   : "Cool Album",
-                        artwork :  "/wp-content/themes/sunsick-studio/images/albums/album-1.png",
-                        src     : "",
+                        title   : "Another Year",
+                        artist  : "Battery Point",
+                        album   : "A Memory for Today",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a0819712968_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-another-year.mp3",
+                        loaded  : false,
                         playing : false
-                    }
-                ]
-            },
-            {
-                id     : 2,
-                name   : "Blink 182",
-                songs  : [
+                    },
                     {
                         id      : 2,
-                        title   : "Cool Song",
-                        artist  : "Blink 182",
-                        album   : "Song Album 2",
-                        artwork :  "/wp-content/themes/sunsick-studio/images/albums/album-2.png",
-                        src     : "",
+                        title   : "Street Lights",
+                        artist  : "Battery Point",
+                        album   : "Battery Point",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a2510056921_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-streetlights.mp3",
+                        loaded  : false,
+                        playing : false
+                    },
+                    {
+                        id      : 3,
+                        title   : "Wish",
+                        artist  : "Battery Point",
+                        album   : "Star",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a3809403914_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-wish.mp3",
+                        loaded  : false,
+                        playing : false
+                    },
+                    {
+                        id      : 4,
+                        title   : "Another Year",
+                        artist  : "Battery Point",
+                        album   : "A Memory for Today",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a0819712968_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-another-year.mp3",
+                        loaded  : false,
+                        playing : false
+                    },
+                    {
+                        id      : 5,
+                        title   : "Street Lights",
+                        artist  : "Battery Point",
+                        album   : "Battery Point",
+                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a2510056921_16.jpg",
+                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-streetlights.mp3",
+                        loaded  : false,
                         playing : false
                     }
                 ]

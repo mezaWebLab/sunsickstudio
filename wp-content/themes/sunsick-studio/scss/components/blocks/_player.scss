@@ -211,8 +211,15 @@
 			}
 		}
 
-		&.screen-0 {
+		.ps__rail-y,
+		.ps__rail-x {
+			display : none;
+		}
+
+		&.now-playing {
 			.footer {
+				cursor : pointer;
+
 				div p {
 					padding-right : 5px;
 					position      : relative;
@@ -221,8 +228,75 @@
 			}
 		}
 
-		&.screen-1 {
+		&.discography {
+			.header {
+				display               : grid;
+				grid-template-columns : 10% 30% 30% 30%;
+				font-weight           : 200;
+				font-size             : 0.7em;
+				padding-left          : 30px;
+				margin-bottom         : 10px;
+				color                 : $white;
+
+				div {
+					opacity : 0.5;
+				}
+			}
+
+			.body {
+				height     : 208px;
+				overflow-y : hidden;
+
+				@media (min-width : $breakpoint-md) {
+					height : 115px;
+				}
+
+				@media (min-width : $breakpoint-lg) {
+					height : 208px;
+				}
+
+				.song {
+					color                 : $white;
+					cursor                : pointer;
+					font-weight           : 200;
+					display               : grid;
+					font-size             : 0.75em;
+					white-space           : nowrap;
+					padding               : 12px 15px 12px 15px;
+					border-top            : 1px solid rgba(75, 75, 75, 0.5);
+					grid-template-columns : 10% 30% 30% 30%;
+
+					&:first-child {
+						border-top    : none;
+					}
+
+					&:hover {
+						background :rgba(150, 150, 150, 0.1);
+					}
+
+					img {
+						width : 100%;
+
+						&.active {
+							border : 2px solid $color-primary;
+						}
+					}
+
+					.song-title,
+					.song-artist,
+					.song-album {
+						display     : flex;
+						margin-left : 15px;
+						align-items : center;
+						overflow-x  : hidden;
+					}
+				}
+			}
+
 			.footer {
+				padding-top : 25px;
+				cursor      : pointer;
+
 				div p {
 					padding-left : 5px;
 					position     : relative;

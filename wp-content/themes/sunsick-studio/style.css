@@ -619,14 +619,66 @@ h4 {
       font-style: italic;
       font-weight: 200;
       margin-top: 20px; }
-  #player .screen.screen-0 .footer div p {
-    padding-right: 5px;
-    position: relative;
-    top: -2px; }
-  #player .screen.screen-1 .footer div p {
-    padding-left: 5px;
-    position: relative;
-    top: -2px; }
+  #player .screen .ps__rail-y,
+  #player .screen .ps__rail-x {
+    display: none; }
+  #player .screen.now-playing .footer {
+    cursor: pointer; }
+    #player .screen.now-playing .footer div p {
+      padding-right: 5px;
+      position: relative;
+      top: -2px; }
+  #player .screen.discography .header {
+    display: grid;
+    grid-template-columns: 10% 30% 30% 30%;
+    font-weight: 200;
+    font-size: 0.7em;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: #fafafa; }
+    #player .screen.discography .header div {
+      opacity: 0.5; }
+  #player .screen.discography .body {
+    height: 208px;
+    overflow-y: hidden; }
+    @media (min-width: 768px) {
+      #player .screen.discography .body {
+        height: 115px; } }
+    @media (min-width: 1200px) {
+      #player .screen.discography .body {
+        height: 208px; } }
+    #player .screen.discography .body .song {
+      color: #fafafa;
+      cursor: pointer;
+      font-weight: 200;
+      display: grid;
+      font-size: 0.75em;
+      white-space: nowrap;
+      padding: 12px 15px 12px 15px;
+      border-top: 1px solid rgba(75, 75, 75, 0.5);
+      grid-template-columns: 10% 30% 30% 30%; }
+      #player .screen.discography .body .song:first-child {
+        border-top: none; }
+      #player .screen.discography .body .song:hover {
+        background: rgba(150, 150, 150, 0.1); }
+      #player .screen.discography .body .song img {
+        width: 100%; }
+        #player .screen.discography .body .song img.active {
+          border: 2px solid #DBAB0B; }
+      #player .screen.discography .body .song .song-title,
+      #player .screen.discography .body .song .song-artist,
+      #player .screen.discography .body .song .song-album {
+        display: flex;
+        margin-left: 15px;
+        align-items: center;
+        overflow-x: hidden; }
+  #player .screen.discography .footer {
+    padding-top: 25px;
+    cursor: pointer; }
+    #player .screen.discography .footer div p {
+      padding-left: 5px;
+      position: relative;
+      top: -2px; }
 
 /*
 ||----------------------------------||

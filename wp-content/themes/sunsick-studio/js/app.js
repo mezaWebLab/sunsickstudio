@@ -1,11 +1,11 @@
 /*
 ||----------------------------------||
-||									||
-||    Sunsick Studio 				||
-||	  Main App File 			  	||
-||	  Alex Meza (Meza Web Lab)  	||
-||	  2018					  		||
-||									||
+||									                ||
+||    Sunsick Studio 				        ||
+||	  Main App File 			        	||
+||	  Alex Meza (Meza Web Lab)  	  ||
+||	  2018					  	          	|| 
+||								                 	||
 ||----------------------------------||
 */
 
