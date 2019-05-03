@@ -22,6 +22,6 @@ class SunsickStudio {
     public $artists;
 }
 
-echo json_encode(new SunsickStudio);
+echo json_encode(new SunsickStudio());
 
 ?>

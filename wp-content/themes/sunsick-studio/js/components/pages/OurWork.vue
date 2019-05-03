@@ -81,10 +81,6 @@
         },
         created() {},
         mounted() {
-            window.expandPlayer();
-
-            console.log(this.musicData);
-
             $(".music-slider-mobile").slick({
                 infinite      : false,
                 nextArrow     : '<button type="button" class="slick-next"><img src="wp-content/themes/sunsick-studio/images/arrow-right.png" /></button>',

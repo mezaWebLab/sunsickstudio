@@ -71,7 +71,6 @@
         },
         created() {},
         mounted() {
-        	window.expandPlayer();
         },
         methods : {
 

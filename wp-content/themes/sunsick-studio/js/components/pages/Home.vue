@@ -25,7 +25,7 @@
 					</div>
 					<div class="title-home-container">
 						<div class="title-home">
-							<h1 v-html="homeData[0]"></h1>
+							<h1 v-html="homeData.header"></h1>
 						</div>
 					</div>
 				</div>
@@ -34,7 +34,7 @@
 				<div class="divider"></div>
 				<div class="row">
 					<div class="col-md-12">
-						<p v-html="homeData[1]" class="white"></p>
+						<p v-html="homeData.body" class="white"></p>
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,6 @@
 		created() {},
         mounted() {
         	window.showHomeParagraph();
-			window.minimizePlayer();
         },
         methods : {
 

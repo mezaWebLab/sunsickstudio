@@ -29,14 +29,6 @@ window.hideHomeParagraph = function() {
 	$(".home-paragraph-desktop").removeClass("active");
 }
 
-window.expandPlayer = function() {
-	$("#player").addClass("expanded");
-}
-
-window.minimizePlayer = function() {
-	$("#player").removeClass("expanded");
-}
-
 window.goTo = function(social) {
 	if (social === "instagram") {
 		window.open("http://instagram.com/sunsickstudio");

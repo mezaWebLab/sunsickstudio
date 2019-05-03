@@ -10,13 +10,16 @@
 */
 
 export const storeGetters = {
-    homeData   : state => {
+    homeData     : state => {
         return state.home;
     },
-    playerData : state => {
+    servicesData : state => {
+        return state.services;
+    },
+    playerData   : state => {
         return state.player;
     },
-    musicData  : state => {
+    musicData    : state => {
         return state.music;
     }
 }

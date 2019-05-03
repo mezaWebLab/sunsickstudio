@@ -11,24 +11,38 @@
 
 import Vue from "vue";
 import Vuex from "vuex";
+import musicFormatter from "./music-formatter";
 
 Vue.use(Vuex);
 
-let jsonData;
+let sunsickData,
+    musicData;
 
 $.ajax({
-    url      : "/wp-content/themes/sunsick-studio/sunsick-studio.php",
+    url      : "/wp-content/plugins/sunsick-editor/sunsick-content.json",
     type     : "post",
     dataType : "json",
     async    : false,
     success  : (json) => {
-        jsonData = json;
-        console.log(json);
+        sunsickData = json;
+        // console.log(json);
+    }
+});
+
+$.ajax({
+    url      : "/wp-content/plugins/sunsick-player/get_all_music.php",
+    type     : "post",
+    dataType : "json",
+    async    : false,
+    success  : (data) => {
+        musicData = data;
+        // console.log(data);
     }
 });
 
 export const storeState = {
-    home   : jsonData.home,
+    home : sunsickData.home,
+    services : sunsickData.services,
     player : {
         songId     : 0,
         playing    : false,
@@ -43,74 +57,5 @@ export const storeState = {
             playing : false
         }
     },
-    music : {
-        artists : [
-            {
-                id     : 0,
-                name   : "Battery Point",
-                songs  : [
-                    {
-                        id      : 0,
-                        title   : "Wish",
-                        artist  : "Battery Point",
-                        album   : "Star",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a3809403914_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-wish.mp3",
-                        loaded  : false,
-                        playing : false
-                    },
-                    {
-                        id      : 1,
-                        title   : "Another Year",
-                        artist  : "Battery Point",
-                        album   : "A Memory for Today",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a0819712968_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-another-year.mp3",
-                        loaded  : false,
-                        playing : false
-                    },
-                    {
-                        id      : 2,
-                        title   : "Street Lights",
-                        artist  : "Battery Point",
-                        album   : "Battery Point",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a2510056921_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-streetlights.mp3",
-                        loaded  : false,
-                        playing : false
-                    },
-                    {
-                        id      : 3,
-                        title   : "Wish",
-                        artist  : "Battery Point",
-                        album   : "Star",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a3809403914_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-wish.mp3",
-                        loaded  : false,
-                        playing : false
-                    },
-                    {
-                        id      : 4,
-                        title   : "Another Year",
-                        artist  : "Battery Point",
-                        album   : "A Memory for Today",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a0819712968_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-another-year.mp3",
-                        loaded  : false,
-                        playing : false
-                    },
-                    {
-                        id      : 5,
-                        title   : "Street Lights",
-                        artist  : "Battery Point",
-                        album   : "Battery Point",
-                        artwork : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/a2510056921_16.jpg",
-                        src     : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/731234/bp-streetlights.mp3",
-                        loaded  : false,
-                        playing : false
-                    }
-                ]
-            }
-        ]
-    }
+    music : musicFormatter.format(musicData)
 };

@@ -10,7 +10,7 @@
 -->
 
 <template>
-	<div id="player">
+	<div id="player" :class="{ 'expanded' : expanded }">
         <audio ref="audioNode">
 			<source :src="playerData.loadedSong.src" type="audio/mpeg">
 		</audio>
@@ -58,11 +58,14 @@
                     <p>*All songs recorded and mixed at Sunsick Studio</p>
                 </div> -->
             </div>
+            <div class="credits">
+                <p>&copy;&nbsp;{{ getYear }}&nbsp;Sunsick Studio</p>
+            </div>
         </div>
         <div v-if="screen === 1" class="screen screen-1 discography">
             <div class="header">
                 <div>&nbsp;</div>
-                <div>Song Title</div>
+                <div>Song</div>
                 <div>Artist</div>
                 <div>Album</div>
             </div>
@@ -86,6 +89,9 @@
                     <p>Now Playing</p>
                 </div>
             </div>
+            <div class="credits">
+                <p>&copy;&nbsp;{{ getYear }}&nbsp;Sunsick Studio</p>
+            </div>
         </div>
 	</div>	
 </template>
@@ -98,10 +104,19 @@
     export default {
         name : "player",
         computed : {
+            getYear() {
+                let d = new Date();
+                return d.getFullYear();
+            },
             ...mapGetters([
                 "playerData",
                 "musicData"
             ])
+        },
+        watch:{
+            $route (to, from){
+                this.updateStyle();
+            }
         },
         data() {
             return {
@@ -109,7 +124,8 @@
                 songIndex    : 0,
                 screen       : 0,
                 isFirstIndex : false,
-                isLastIndex  : false
+                isLastIndex  : false,
+                expanded     : false
             };
         },
         created() {},
@@ -117,8 +133,23 @@
             window.audioNode = this.$refs.audioNode;
             this.arrangeSongs();
             this.setFeatureSong();
+            this.updateStyle();
+            window.addEventListener("resize", () => {
+                this.updateStyle();
+
+                if (this.discographyScrollBar) {
+                    this.discographyScrollBar.update();
+                }
+            });
         },
         methods : {
+            updateStyle() {
+                if (window.innerWidth >= 768 && this.$route.path !== "/") {
+                    this.expanded = true;
+                } else {
+                    this.expanded = false;
+                }
+            },
             arrangeSongs() {
                 this.musicData.artists.forEach(artist => {
                     artist.songs.forEach(song => {
@@ -199,7 +230,7 @@
                         case "discography-body":
                             $(this.$refs.discographyBody).find(".ps__rail-x").add(".ps__rail-y").remove();
 
-                            let discographyScrollBar = new PerfectScrollbar(this.$refs.discographyBody, {
+                            this.discographyScrollBar = new PerfectScrollbar(this.$refs.discographyBody, {
                                 suppressScrollX : true
                             });
 
